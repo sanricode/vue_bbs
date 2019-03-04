@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>board app</title>
+  <link href="css/milligram.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="wrapper">
+
+  <glonav id="header"></glonav>
+
+<div class="container">
+
+  <div class="board" id="board">
+
+     <board-form v-on:input="doAdd"></board-form>
+     <ul class="lists" style="list-style-type: none">
+       <board-list v-for="list in lists"
+         v-bind:name="list.name"
+         v-bind:message="list.message"
+         v-bind:date="list.date">
+       </board-list>
+     </ul>
+
+  </div>
+
+</div>
+
+  <footernav id="footer"></footernav>
+
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
